@@ -2,12 +2,11 @@ const express = require("express");
 const format = require("date-format");
 const app = express();
 
-// swagger docs related
 
 const PORT = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
-  res.status(200).send("<h1>Hello from APP</h1>");
+  res.status(200).send("<h1>Hello from Sample Social App</h1>");
 });
 
 app.get("/favicon.ico", (req, res) => {
@@ -19,7 +18,7 @@ app.get("/api/v1/instagram", (req, res) => {
     username: "Sai",
     folowers: 6,
     follows: 7,
-    date: format.asString("dd[MM] - hh:mm:ss", new Date()),
+    date: format.asString("dd-MM-yyyy - hh:mm:ss", new Date()),
   };
 
   res.status(200).json(instaSocial);
@@ -30,7 +29,7 @@ app.get("/api/v1/facebook", (req, res) => {
     username: "Sai",
     folowers: 880,
     follows: 10,
-    date: format.asString("dd[MM] - hh:mm:ss", new Date()),
+    date: format.asString("dd-MM-yyyy - hh:mm:ss", new Date()),
   };
 
   res.status(200).json(instaSocial);
@@ -38,10 +37,10 @@ app.get("/api/v1/facebook", (req, res) => {
 
 app.get("/api/v1/linkedin", (req, res) => {
   const instaSocial = {
-    username: "hiteshchoudhary",
+    username: "Sai",
     folowers: 80,
     follows: 1,
-    date: new Date(),
+    date: format.asString("dd-MM-yyyy - hh:mm:ss", new Date()),
   };
 
   res.status(200).json(instaSocial);

@@ -7,8 +7,12 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
-  res.status(200).send("<h1>Hello from LCO</h1>");
+  res.status(200).send("<h1>Hello from APP</h1>");
 });
+
+app.get("/favicon.ico", (req, res) => {
+    res.status(200).send("<h1>Hello from Image</h1>");
+  });
 
 app.get("/api/v1/instagram", (req, res) => {
   const instaSocial = {

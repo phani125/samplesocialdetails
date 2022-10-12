@@ -2,6 +2,8 @@ const express = require('express');
 var format = require('date-format');
 const app = express();
 
+const PORT = process.env.PORT || 4000;
+
 app.get("/", (req,res) => {
     res.status(200).send("Welcome to user data page");
 });
@@ -46,4 +48,4 @@ app.get('/api/v1/facebook', (req,res) => {
     res.json(fbfol)
 });
 
-app.listen(3000, ()=> console.log("App is running at 3000"));
+app.listen(PORT, ()=> console.log(`App is running at ${PORT}`));
